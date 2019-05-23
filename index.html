@@ -1,0 +1,23 @@
+<html>
+ <script>
+     (function() {
+        var orientation,
+            img = new Image();
+        img.onload = function () {
+        if (img.naturalWidth > img.naturalHeight) {
+            orientation = "rotate(90deg)";
+        console.log(orientation);
+        } else if (img.naturalWidth < img.naturalHeight) {
+            orientation = "rotate(0deg)";
+        } else {
+       
+        }
+        document.body.innerHTML = "<img id=pick />" ;
+        document.getElementById("pick").src =  img.src;
+        document.getElementById("pick").style.transform = orientation;     
+        
+        }
+        img.src = "here goes the source of the picture";
+     })();
+ </script>
+</html>
